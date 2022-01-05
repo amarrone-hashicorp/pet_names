@@ -27,3 +27,7 @@ resource "random_pet" "my_pet" {
 output "names" {
   value = random_pet.my_pet.*.id
 }
+
+output "names_formatted" {
+  value = templatefile("output.tpl", { name_list = random_pet.my_pet })
+}
