@@ -1,4 +1,4 @@
-#main.tf
+# variable.tf
 
 variable "pet_name_length" {
   type        = number
@@ -17,16 +17,3 @@ variable "pet_name_separator" {
   description = "separator character between words for the pet name"
   default     = " "
 }
-
-resource "random_pet" "my_pet" {
-  count     = var.pet_name_count
-  length    = var.pet_name_length
-  separator = var.pet_name_separator
-}
-
-resource "random_string" "my_random_string" {
-  length  = 5
-  special = false
-  upper   = false
-}
-
