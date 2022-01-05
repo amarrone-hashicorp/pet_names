@@ -24,18 +24,8 @@ resource "random_pet" "my_pet" {
   separator = var.pet_name_separator
 }
 
-resource "random_string" "my_random_string" {
-  length  = 5
-  special = false
-  upper   = false
-}
-
 output "names" {
   value = random_pet.my_pet.*.id
-}
-
-output "my_random_string" {
-  value = random_string.my_random_string.result
 }
 
 output "names_formatted" {
